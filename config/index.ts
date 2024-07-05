@@ -1,3 +1,6 @@
+const path = require('path');
+const pathResolve = (pathUrl) => path.join(__dirname, pathUrl);
+
 const config = {
   projectName: 'ace_aigc_app',
   date: '2024-7-2',
@@ -49,6 +52,7 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: ['taro-ui'],
     postcss: {
       autoprefixer: {
         enable: true,
@@ -63,7 +67,14 @@ const config = {
         }
       }
     }
-  }
+  },
+  alias: {
+      "@": pathResolve("src"),
+      "@assets": pathResolve("src/assets"),
+      "@components": pathResolve("src/components"),
+      "@pages": pathResolve("src/pages"),
+      "@store": pathResolve("src/store"),
+  },
 }
 
 module.exports = function (merge) {

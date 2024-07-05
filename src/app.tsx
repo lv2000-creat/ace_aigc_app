@@ -1,13 +1,11 @@
 import { Component, PropsWithChildren } from 'react'
 import { Provider } from 'mobx-react'
 
-import counterStore from './store/counter'
+import * as Store from "./store";
 
-import './app.less'
+import './index.less';
 
-const store = {
-  counterStore
-}
+import 'taro-ui/dist/style/index.scss' // 需要手动引入ui组件样式,全局引入一次即可
 
 class App extends Component<PropsWithChildren>  {
   componentDidMount () {}
@@ -19,7 +17,7 @@ class App extends Component<PropsWithChildren>  {
   // this.props.children 就是要渲染的页面
   render () {
     return (
-      <Provider store={store}>
+      <Provider store={Store}>
         {this.props.children}
       </Provider>
     )

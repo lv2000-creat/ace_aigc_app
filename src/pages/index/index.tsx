@@ -49,7 +49,7 @@ class Index extends Component<PropsWithChildren> {
     const { counterStore: { counter } } = this.props.store
     return (
       <View className='index'>
-        <Text>{'home'}</Text>
+        <Text>{'Index'}</Text>
       </View>
     )
   }
